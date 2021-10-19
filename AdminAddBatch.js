@@ -39,7 +39,7 @@ selectedVaccine.addEventListener("change", function() {
 
 // Check if vaccine name is selected
 function checkSelectedVaccine(){
-  var selectedVaccine = document.getElementById("vaccineName");
+  var selectedVaccine = document.getElementById("vaccineID");
   if(selectedVaccine.value != ""){
     addIsValid(selectedVaccine);
     return true;
