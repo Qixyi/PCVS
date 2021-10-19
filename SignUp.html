@@ -17,15 +17,15 @@
    <div class="navbar sticky-top top-nav-blue">
     <div class="container-fluid">
         <a class="navbar-brand link-light" href="RecordVaccine.html"><img src="covidvax.png" alt="This is the CoVax logo" height="50" width="50">
-    <p class="h1 align-middle d-inline-block"> CoVax</p></a>
-        <a href="Login.php"><button type="button" class="btn btn-outline-warning">Login</button></a>
+    <p class="h1 align-middle d-inline-block"> PCVS</p></a>
+        <a href="Login.html"><button type="button" class="btn btn-outline-warning">Login</button></a>
     </div>
 </div>  
 
 <div class="container">
     
-<h3 class="text-center mt-3">Welcome to CoVax!</h3>
-<form class="text-center needs-validation" novalidate>
+<h3 class="text-center mt-3">Welcome to PCVS!</h3>
+<form method="post" action="Login.html" class="text-center needs-validation" novalidate>
 
     <!--Radio Button-->
     <div class="form-check mt-3 d-md-inline-block mr-2 ">
@@ -48,9 +48,9 @@
    
       <!--Centre Name-->
       <div class="form-floating-mb-3 inline-block mr-2 invisible" id="selectCentre" novalidate>
-        <label for="centreName" class="form-floating-mb-3">Select Centre</label>
+        <label for="selectCentreName" class="form-floating-mb-3">Select Centre</label>
         <div class="form-floating-mb-3">
-            <select class="form-floating-center-mb-3 mt-5" id="centreName">
+            <select class="form-floating-center-mb-3 mt-5" id="selectCentreName">
                 <option selected disabled value="">Choose...</option>
                 <option value="1">KPJ Damansara</option>
                 <option value="2">Prince Court</option>
@@ -58,7 +58,7 @@
             </select>
             <div class="invalid-feedback">Please select a Healthcare Centre</div>
         </div>
-        </br>
+        <br>
 
           <!-- (DELETE) TEST MODAL : Button trigger -->
           <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -67,49 +67,7 @@
           </button>
           <br>
           
-           <!-- Modal -->
-           <div class="modal fade" id="exampleModal" tabindex="-1"
-           aria-labelledby="exampleModalLabel" aria-hidden="true">
-           <div class="modal-dialog">
-               <div class="modal-content">
-                       <div class="modal-header">
-                           <h5 class="modal-title" id="exampleModalLabel">Add Healthcare
-                               Centre</h5>
-                           <button type="button" class="btn-close" data-bs-dismiss="modal"
-                               aria-label="Close"></button>
-                       </div>
-                       <div class="modal-body">
-                           <form > 
-                               <div class="row">
-                                   <div class=" col-md-8">
-                                       <label for="centreName" class="col-md-8">Centre
-                                           Name:
-                                       </label>
-                                   </div>
-                                   <div class="col-md-8">
-                                       <input type="text" class="col-md-8" id="centreName"
-                                           placeholder="Centre Name" required>
-                                   </div>
-                                   <div class="col-md-8 mt-2">
-                                       <label for="centreName" class="col-md-8">Address:
-                                       </label>
-                                   </div>
-                                   <div class="col-md-8">
-                                       <input type="text" class="col-md-8" id="address"
-                                           placeholder="Address" required>
-                                   </div>
-                                   <div class="text-center mt-5">
-                                       <button type="submit" class="btn btn-primary"
-                                           id="createBtn">Save</button>
-                                   </div>
-                               </div>
-                           </form>
-                           <div class="invalid-feedback">Please select a Healthcare Centre
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
+           
        </div>
 
             <!--Sign Up Form-->
@@ -156,10 +114,54 @@
 
               <!--Sign Up Button-->
               <div class="signup-btn text-center mt-3">
-                <input type="button" class="btn btn-primary mb-md-0 mb-5 btn-lg " id="signUpBtn"
+                <input type="submit" class="btn btn-primary mb-md-0 mb-5 btn-lg " id="signUpBtn"
                     value="Sign Up">
             </div>                 
         </form>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Healthcare
+                            Centre</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation" novalidate> 
+                            <div class="row">
+                                <div class=" col-md-8">
+                                    <label for="centreNameTextInput" class="col-md-8">Centre
+                                        Name:
+                                    </label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="col-md-8" id="centreNameTextInput"
+                                        placeholder="Centre Name" required>
+                                    <div class="invalid-feedback">Please enter a centre name.</div>
+                                </div>
+                                <div class="col-md-8 mt-2">
+                                    <label for="address" class="col-md-8">Address:
+                                    </label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="col-md-8" id="address"
+                                        placeholder="Address" required>
+                                    <div class="invalid-feedback">Please enter an address.</div>
+                                </div>
+                                <div class="text-center mt-5">
+                                    <button type="submit" class="btn btn-primary"
+                                        id="createBtn">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 <script src="SignUp.js"></script>
 </body>
