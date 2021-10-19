@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <a class="navbar-brand link-light" href="RecordVaccine.html"><img src="covidvax.png" alt="This is the CoVax logo" height="50" width="50">
     <p class="h1 align-middle d-inline-block"> CoVax</p></a>
-        <a href="#"><button type="button" class="btn btn-outline-warning">Log Out</button></a>
+        <a href="Login.php"><button type="button" class="btn btn-outline-warning">Login</button></a>
     </div>
 </div>  
 
@@ -43,9 +43,9 @@
         </label>
     </div>
     <button type="button" onclick=" checkButton()"> Check </button> 
-    <h6 id="display" style="color:green"> </h6>
-    <h6 id="error" style="color:red"> </h6>
-
+    <h3 id="display" style="color:green"> </h3>
+    <h3 id="error" style="color:red"> </h3>
+   
       <!--Centre Name-->
       <div class="form-floating-mb-3 inline-block mr-2 invisible" id="selectCentre" novalidate>
         <label for="centreName" class="form-floating-mb-3">Select Centre</label>
@@ -79,7 +79,7 @@
                                aria-label="Close"></button>
                        </div>
                        <div class="modal-body">
-                           <form>
+                           <form > 
                                <div class="row">
                                    <div class=" col-md-8">
                                        <label for="centreName" class="col-md-8">Centre
@@ -121,8 +121,8 @@
                 <div class="invalid-feedback">Please enter your full name</div>
             </div>
             <div class="form-floating-mb-3">
-                <label for="userName">Username</label>
-                <input type="text" class="form-control" id="userName"
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username"
                     placeholder="Username" required>
                 <div class="invalid-feedback">Please enter a username</div>
             </div>
