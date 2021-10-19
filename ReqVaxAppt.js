@@ -1,8 +1,7 @@
 // Confirm submit button events
 var confirmBtn = document.getElementById("confirmBtn");
 confirmBtn.addEventListener("click", function (event) {
-    var form = document.querySelector('.needs-validation');
-
+   
     var statusArray = [];
     statusArray.push(checkVaccineName());
     statusArray.push(checkCentreNameBatchNo());
@@ -68,6 +67,8 @@ function checkHealthcareCentre(){
       element.classList.remove("is-valid");
     }
   }
+
+  
 
 
   

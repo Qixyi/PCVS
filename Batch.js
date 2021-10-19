@@ -1,10 +1,8 @@
 // Confirm submit button events
 var confirmBtn = document.getElementById("confirmBtn");
 confirmBtn.addEventListener("click", function (event) {
-    var form = document.querySelector('.needs-validation');
 
     var statusArray = [];
-    statusArray.push(checkVaccineName());
     statusArray.push(checkHealthcareCentre());
     statusArray.push(checkAppointmentDate());
 
@@ -14,20 +12,9 @@ confirmBtn.addEventListener("click", function (event) {
     }
 }, false);
 
-// Check if vaccine name is selected
-function checkVaccineName(){
-  var vaccineName= document.getElementById("vaccineName");
-  if(vaccineName.value != ""){
-    addIsValid(vaccineName);
-    return true;
-  }
-  addIsInvalid(vaccineName);
-  return false;
-}
-
 // Check if healthcareCentre is selected
 function checkHealthcareCentre(){
-  var healthcareCentre = document.getElementById("healthcareCentre");
+  var healthcareCentre = document.getElementById("selectHealthcareCentre");
   if(healthcareCentre.value != ""){
     addIsValid(healthcareCentre);
     return true;
