@@ -19,7 +19,7 @@
     <div class="navbar sticky-top top-nav-blue">
       <div class="container-fluid">
           <a class="navbar-brand link-light" href="AdminHome.html"><img src="covidvax.png" alt="This is the CoVax logo" height="50" width="50">
-      <p class="h1 align-middle d-inline-block"> CoVax</p></a>
+      <p class="h1 align-middle d-inline-block"> PCVS</p></a>
           <a href="Login.html"><button type="button" class="btn btn-outline-warning">Log Out</button></a>
       </div>
     </div>
@@ -45,13 +45,13 @@
       <form method="post" action="AdminHome.html" class="row needs-validation" novalidate>
         <div class="col-md-8 offset-md-2">
             <div class="row mb-3">
-              <label for="vaccineName" class="pt-2 col-lg-3">Vaccine Name: </label>
+              <label for="vaccineName" class="pt-2 col-lg-3">Vaccine ID: </label>
               <div class="col-lg-9">
-                  <select class="form-select" id="vaccineName" required>
+                  <select class="form-select" id="vaccineID" required>
                       <option selected disabled value="">Choose...</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option value="1">V0001</option>
+                      <option value="2">V0002</option>
+                      <option value="3">V0003</option>
                   </select>
                   <div class="invalid-feedback">
                     Please select a vaccine.
@@ -61,13 +61,13 @@
             </div>
 
             <div class="row mb-5">
-                <label for="vaccineID" class="col-lg-3 col-form-label">Vaccine ID:</label>
+                <label for="vaccineID" class="col-lg-3 col-form-label">Vaccine Name:</label>
                 <div class="col-lg-3">
-                    <input type="text" readonly class="form-control-plaintext" id="vaccineID" value="V0001">
+                    <input type="text" readonly class="form-control-plaintext" id="vaccineName" value="">
                 </div>
                 <label for="manufacturer" class="col-lg-3 col-form-label">Manufacturer:</label>
                 <div class="col-lg-3">
-                    <input type="text" readonly class="form-control-plaintext" id="manufacturer" value="Company A">
+                    <input type="text" readonly class="form-control-plaintext" id="manufacturer" value="">
                 </div>
             </div>
 
