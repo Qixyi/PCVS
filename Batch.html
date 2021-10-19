@@ -33,20 +33,21 @@
         </nav>
       </div>
 
-       <!--Heading Of Page-->
-       <h3 class="text-center mb-3 mt-3">Batches</h3>
-       <br>
-
   <!--Healthcare Centre Name-->
+  <form  class="row needs-validation" novalidate>
   <div class="form-floating-mb-3 inline needs-validation " id="selectBatch" novalidate>
-    <label for="batchNo" class="pt-2 col-lg-3">Batch No</label>
-    <div class="col-lg-9">
+    <label for="batchNo" class="pt-2 col-lg-3">Batch No: </label>
+    <div class="col-md-9">
         <select class="form-select" aria-label="Default select example">
             <option selected disabled value="">Choose...</option>
-            <option value="1">BT007</option>
-            <option value="2">BT008</option>
-            <option value="3">BT009</option>
+            <option selected disabled value="">Choose...</option>
+                    <option value="1">JB007</option>
+                    <option value="2">AA002</option>
+                    <option value="3">AA003</option>
         </select>
+        <div class="invalid-feedback">
+            Please select a healthcare centre.
+          </div>
          </div>
        </div>
 
@@ -61,66 +62,40 @@
             </thead>
             <tbody>
             <tr>
-                <td>BT007</td>
+                <td>JB007</td>
                 <td>50</td>
                 <td>13.7.2021</td>
             </tr>
             <tr>
-                <td>BT007</td>
+                <td>JB007</td>
                 <td>75</td>
                 <td>24.8.2021</td>
             </tr>
             <tr>
-                <td>BT007</td>
+                <td>JB007</td>
                 <td>90</td>
                 <td>18.10.2021</td>
             </tr>
             </tbody>
         </table>
 
-        <h3 class="text-center mb-3">Batches Of Vaccine</h3>
+        <div class="row mb-3 mt-5">
+            <label for="AppointmentDate" class="pt-2 col-md-3">Appointment Date: </label>
+            <div class="col-md-9">
+                <input type="date" class="form-control" id="appointmentDate" placeholder="Appointment Date" required>
+                  <div class="invalid-feedback">
+                    Please enter an appointment date [Appointment date starts from tomorrow's date].
+                  </div>
+            </div>
+          </div>
+          
+            <!--Buttons-->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" id="confirmBtn">Confirm</button>
+                <button type="cancel" class="btn" id="cancelBtn">Cancel</button>
+            </div>
+          </form>
 
-        <!--Healthcare Centre Name-->
-        <div class="form-floating-mb-3 inline ">
-            <label for="vaccineName" class="pt-2 col-lg-3">Select Centre</label>
-            <div class="col-lg-9">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected disabled value="">Choose...</option>
-                    <option value="1">KPJ Damansara</option>
-                    <option value="2">Prince Court</option>
-                    <option value="3">Mahkota Medical Centre</option>
-                </select>
-                 </div>
-               </div>
-
-               
-         <!-- Vaccine Name and Manufacturer List -->
-        <table class="table table-hover mt-5">
-            <thead>
-            <tr class="light-cyan-color">
-                <th scope="col">Batch</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Expiry Date</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>BT007</td>
-                <td>50</td>
-                <td>13.7.2021</td>
-            </tr>
-            <tr>
-                <td>BT007</td>
-                <td>75</td>
-                <td>24.8.2021</td>
-            </tr>
-            <tr>
-                <td>BT007</td>
-                <td>90</td>
-                <td>18.10.2021</td>
-            </tr>
-            </tbody>
-        </table>
 
 </div>
 </body>
