@@ -36,7 +36,7 @@ function checkHealthcareCentre(){
   return false;
 }
 
-// Date Picker set min limit to tomorrow
+// Date Picker has set limit 
 var today = new Date();
 var tomorrow = new Date();
 tomorrow.setDate(today.getDate() + 1);
