@@ -190,12 +190,15 @@
 
 
 		<!-- Confirm Vaccination Appointment Modal -->
-		<div class="modal fade" id="confirmedModal" tabindex="-1" aria-labelledby="confirmedModalLabel" aria-hidden="true">
+		<div class="modal fade" id="confirmedModal" tabindex="-1" 
+		aria-labelledby="confirmedModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-				<h5 class="modal-title" id="confirmedModalLabel">Confirm Vaccination Appointment</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				<h5 class="modal-title" id="confirmedModalLabel">
+					Confirm Vaccination Appointment</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"
+				 aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<h5>Patient Details</h5>
@@ -249,20 +252,23 @@
 							<h6 id="confirmedModalVaccineName">Pfizer</h6>
 						</div>
 					</div>
-					<h4 class="mt-4 light-cyan-color text-center" id="confirmedModalStatus">Status: Pending</h4>
+					<h4 class="mt-4 light-cyan-color text-center" 
+					id="confirmedModalStatus">Status: Pending</h4>
 					<hr>
 					<form>
 						<fieldset class="row mb-3">
 						  <legend class="col-form-label col-sm-4 pt-0">Status : </legend>
 						  <div class="col-sm-8">
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="acceptRejectRadio" id="acceptRadio">
+								<input class="form-check-input" type="radio" name="acceptRejectRadio" 
+								id="acceptRadio">
 								<label class="form-check-label" for="acceptRadio">
 								  Accepted
 								</label>
 							  </div>
 							  <div class="form-check">
-								<input class="form-check-input" type="radio" name="acceptRejectRadio" id="rejectRadio">
+								<input class="form-check-input" type="radio" name="acceptRejectRadio" 
+								id="rejectRadio">
 								<label class="form-check-label" for="rejectRadio">
 								  Rejected
 								</label>
@@ -271,14 +277,17 @@
 						</fieldset>
 						
 						<div class="row mb-3" id="confirmedModalRemarksDiv">
-							<label for="confirmedModalRemarks" class="col-sm-4 col-form-label">Remarks (optional): </label>
+							<label for="confirmedModalRemarks" class="col-sm-4 col-form-label">
+								Remarks (optional): </label>
 							<div class="col-sm-8">
 								<textarea class="form-control" id="confirmedModalRemarks" rows="3"></textarea>
 							</div>
 						</div>
 						<div class="text-center">
-							<button type="submit" class="btn btn-primary" id="acceptRejectApointmentSaveBtn">Save changes</button>
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary" 
+							id="acceptRejectApointmentSaveBtn">Save changes</button>
+							<button type="button" class="btn btn-secondary"
+							 data-bs-dismiss="modal">Cancel</button>
 						</div>	
 					  </form>
 				</div>
@@ -288,12 +297,15 @@
 
 
 		<!-- Record Vaccination Administered Modal -->
-		<div class="modal fade" id="administeredModal" tabindex="-1" aria-labelledby="administeredModalLabel" aria-hidden="true">
+		<div class="modal fade" id="administeredModal" tabindex="-1"
+		 aria-labelledby="administeredModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-				<h5 class="modal-title" id="administeredModalLabel">Record Vaccination Administered</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				<h5 class="modal-title" id="administeredModalLabel">
+					Record Vaccination Administered</h5>
+				<button type="button" class="btn-close" 
+				data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<h5>Patient Details</h5>
@@ -347,14 +359,16 @@
 							<h6 id="administeredModalVaccineName">Pfizer</h6>
 						</div>
 					</div>
-					<h4 class="mt-4 light-cyan-color text-center" id="administeredModalStatus">Status: Confirmed</h4>
+					<h4 class="mt-4 light-cyan-color text-center" 
+					id="administeredModalStatus">Status: Confirmed</h4>
 					<hr>
 					<form>
 						<fieldset class="row mb-3">
 						  <legend class="col-form-label col-sm-4 pt-0">Status: </legend>
 						  <div class="col-sm-8">
 							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="administered" id="administeredCheckbox"
+								<input class="form-check-input" type="checkbox" 
+								value="administered" id="administeredCheckbox"
 								data-bs-toggle="collapse" data-bs-target="#administeredModalRemarksDiv">
 
 								<label class="form-check-label" for="administeredCheckbox">
@@ -365,14 +379,18 @@
 						</fieldset>
 						<!-- Collapsed Remarks Div -->
 						<div class="row mb-3 collapse" id="administeredModalRemarksDiv">
-							<label for="administeredModalRemarks" class="col-sm-4 col-form-label">Remarks (optional): </label>
+							<label for="administeredModalRemarks" 
+							class="col-sm-4 col-form-label">Remarks (optional): </label>
 							<div class="col-sm-8">
-								<textarea class="form-control" id="administeredModalRemarks" rows="3"></textarea>
+								<textarea class="form-control" 
+								id="administeredModalRemarks" rows="3"></textarea>
 							</div>
 						</div>
 						<div class="text-center">
-							<button type="submit" class="btn btn-primary" id="administeredVaccinationSaveBtn">Save changes</button>
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary" 
+							id="administeredVaccinationSaveBtn">Save changes</button>
+							<button type="button" class="btn btn-secondary" 
+							data-bs-dismiss="modal">Cancel</button>
 						</div>	
 					  </form>
 				</div>

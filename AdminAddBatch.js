@@ -1,7 +1,6 @@
 // Add Batch submit button events
 var confirmBtn = document.getElementById("confirmBtn");
 confirmBtn.addEventListener("click", function (event) {
-    var form = document.querySelector('.needs-validation');
 
     var statusArray = [];
     statusArray.push(checkBatchNo());
