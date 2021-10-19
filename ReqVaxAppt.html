@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Req Vax Appt</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"></script>
+</head>
+<body>
+     <!-- Top Bar -->
+   <div class="navbar sticky-top top-nav-blue">
+    <div class="container-fluid">
+        <a class="navbar-brand link-light" href="#"><img src="covidvax.png" alt="This is the CoVax logo" height="50" width="50">
+    <p class="h1 align-middle d-inline-block">PCVS</p></a>
+        <a href="Login.html"><button type="button" class="btn btn-outline-warning">Login</button></a>
+    </div>
+  </div>  
+
+  <div class="container">
+      
+
+       <!-- Vaccine Name and Manufacturer List -->
+       <div class="row mb-3 mt-5">
+       <label for="vaccineNameManufacturer" id="vaccineNameManufacturer" class="pt-2 col-lg-3">Vaccine Name and Manufacturer: </label>
+       <div class="col-lg-9 ">
+       <ul class="list-group">
+        <li class="list-group-item  list-group-item-info">
+          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+          Pfizer; Comirnaty
+        </li>
+        <li class="list-group-item  list-group-item-info">
+          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+          Sinovac; Sinovac Biotech
+        </li>
+        <li class="list-group-item  list-group-item-info">
+          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+          AstraZeneca; AstraZeneca
+        </li>
+        </ul>
+       </div>
+       <div class="invalid-feedback">
+        Please select a vaccine.
+      </div>
+       </div>
+
+ <!-- Centre Name and Address List -->
+    <div class="row mb-3 mt-5">
+        <label for="healthcareCentre" id="centreNameAddress" class="pt-2 col-lg-3">Healthcare Centre: </label>
+        <div class="col-lg-9">
+            <ul class="list-group">
+             <li class="list-group-item  list-group-item-info">
+               <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+               <b>Sunway Medical Centre</b> ; <br>
+               Address: 5, Jalan Lagoon Selatan,<br>
+               Bandar Sunway, 47500 Petaling Jaya,<br>
+               Selangor
+             </li>
+             <li class="list-group-item  list-group-item-info">
+               <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+               <b>Mahkota Medical Centre</b> ; <br>
+               3 Mahkota Melaka Jalan Merdeka ,<br>
+               Melaka 75000, Malaysia.
+             </li>
+             <li class="list-group-item  list-group-item-info">
+               <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+               <b>KPJ Johor Specialist Hospital</b> ; <br>
+               Address: 39B, Jalan Abdul Samad, <br>
+               Kolam Ayer, 80100 Johor Bahru.
+             </li>
+             </ul>
+            </div>
+            <div class="invalid-feedback">
+             Please select a healthcare centre.
+           </div>
+            </div>
+
+ <!-- Centre Name and Batch No -->
+ <div class="row mb-3 mt-5">
+    <label for="centreNameBatchNo" class="pt-2 col-lg-3">Healthcare Centre: </label>
+    <div class="col-lg-9 ">
+        <select class="form-select" id="centreNameBatchNo" required>
+            <option selected disabled value="">Choose...</option>
+            <option value="1">Prince Court Medical Centre (Batch No: PC001)</option>
+            <option value="2">Sunway Medical Centre (Batch No: JB007)</option>
+            <option value="3">KPJ Johor (Batch No: KJ001)</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a batch no.
+        </div>
+  </div>
+</div>
+
+  <!--Buttons-->
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary" id="confirmBtn">Confirm</button>
+    <button type="cancel" class="btn" id="cancelBtn">Cancel</button>
+</div> 
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+</body>
+</html>
