@@ -1,24 +1,22 @@
 //To remove Staff ID attribute and Select Centre
 function patientClick() { 
-    var ICPassportDiv = document.getElementById('ICPassportDiv').classList.toggle('invisible');
-    if(ICPassportDiv.classList.contains('invisible')){
-      ICPassportDiv.classList.remove('invisible'); 
-  }else{
-    ICPassportDiv.classList.add('invisible'); 
-    }
-  }
-  
-  //To remove ICPassport
-  function adminClick() { 
+    var ICPassportDiv = document.getElementById('ICPassportDiv');
     var staffIDDiv = document.getElementById('staffIDDiv');
-    var selectCentre = document.getElementById('selectCentre').classList.toggle('invisible');
-       if(staffIDDiv.classList.contains('invisible')){
-         staffIDDiv.classList.remove('invisible'); 
-    }else{
-      staffIDDiv.classList.add('invisible'); 
+    var selectCentre = document.getElementById('selectCentre');
+
+    if(ICPassportDiv.classList.contains('invisible')){
+      ICPassportDiv.classList.remove('invisible');
+
+      if(!staffIDDiv.classList.contains('invisible')){
+        staffIDDiv.classList.add('invisible'); 
+      }
+
+      if(!selectCentre.classList.contains('invisible')){
+        selectCentre.classList.add('invisible');
+      }
     }
   }
-  
+
   function checkButton(){
     if(document.getElementById('flexRadioDefaultAdmin').checked){
       document.getElementById("display").innerHTML   
@@ -36,6 +34,26 @@ function patientClick() {
   }   
   }
   
+  
+  //To remove ICPassport
+  function adminClick() { 
+    var ICPassportDiv = document.getElementById('ICPassportDiv');
+    var staffIDDiv = document.getElementById('staffIDDiv');
+    var selectCentre = document.getElementById('selectCentre');
+
+    if(staffIDDiv.classList.contains('invisible')) {
+      staffIDDiv.classList.remove('invisible'); 
+    }
+
+    if(selectCentre.classList.contains('invisible')) {
+      selectCentre.classList.remove('invisible');
+    }
+
+    if(!ICPassportDiv.classList.contains('invisible')) {
+      ICPassportDiv.classList.add('invisible');
+    }
+  }
+  
   var createCentreBtn = document.getElementById("createBtn");
   createCentreBtn.addEventListener("click", function (event) {
    
@@ -43,6 +61,7 @@ function patientClick() {
     var statusArray =[];
     statusArray.push(checkCentreName());
     statusArray.push(checkAddress());
+    alert(statusArray);
   
     if (statusArray.includes(false)) {
       event.preventDefault();
@@ -54,11 +73,11 @@ function patientClick() {
   var signUpBtn = document.getElementById("signUpBtn");
   signUpBtn.addEventListener("click", function (event) {
   
-    var adminSelected = document.getElementById('flexRadioDefaultPatient').checked;
+    var adminSelected = document.getElementById('flexRadioDefaultAdmin').checked;
   
     var statusArray = [];
     statusArray.push(checkFullName());
-    statusArray.push(checkUserName());
+    statusArray.push(checkUsername());
     statusArray.push(checkPassword());
     statusArray.push(checkEmail());
     if(adminSelected){
@@ -76,14 +95,14 @@ function patientClick() {
   
   // Check the Centre Name 
   function checkCentreName() {
-    var centreName = document.getElementById("centreName");
-    var centreNameValue = centreName.value.trim();
+    var centreNameTextInput = document.getElementById("centreNameTextInput");
+    var centreNameTextInputValue = centreNameTextInput.value.trim();
   
-    if(!centreNameValue === ''){
-      addIsValid(centreName);
-      return true
+    if(!centreNameTextInputValue === ''){
+      addIsValid(centreNameTextInput);
+      return true;
     }else{
-      addIsInvalid(centreName)
+      addIsInvalid(centreNameTextInput)
       return false;
     }
   }
@@ -91,13 +110,13 @@ function patientClick() {
   // Check the Address 
   function checkAddress() {
     var address = document.getElementById("address");
-    var centreNameValue = address.value.trim();
+    var addressValue = address.value.trim();
   
     if(!addressValue === ''){
       addIsValid(address);
-      return true
+      return true;
     }else{
-      addIsInvalid(address)
+      addIsInvalid(address);
       return false;
     }
   }
@@ -107,25 +126,25 @@ function patientClick() {
     var fullName = document.getElementById("fullName");
     var fullNameValue = fullName.value.trim();
   
-    if(!fullNameValue === ''){
+    if(fullNameValue != ''){
       addIsValid(fullName);
-      return true
+      return true;
     }else{
-      addIsInvalid(fullName)
+      addIsInvalid(fullName);
       return false;
     }
   }
   
   // Check the Username 
-  function checkUserName() {
-    var userName = document.getElementById("userName");
-    var userNameValue = userName.value.trim();
+  function checkUsername() {
+    var username = document.getElementById("username");
+    var usernameValue = username.value.trim();
   
-    if(!userNameValue === ''){
-      addIsValid(userName);
-      return true
+    if(usernameValue != ''){
+      addIsValid(username);
+      return true;
     }else{
-      addIsInvalid(userName)
+      addIsInvalid(username);
       return false;
     }
   }
@@ -136,7 +155,7 @@ function patientClick() {
     var passwordValue = password.value.trim();
     var regex =  /^[A-Za-z]\w{7,14}$/;
   
-    if(regex.test(password)){
+    if(regex.test(passwordValue)){
       addIsValid(password);
       return true;
     }else{
@@ -180,7 +199,7 @@ function patientClick() {
     var iCPassport = document.getElementById("icPassport");
     var iCPassportValue = iCPassport.value.trim();
   
-    if(!iCPassportValue === ''){
+    if(iCPassportValue != ''){
       addIsValid(iCPassport);
       return true
     }else{
@@ -225,7 +244,7 @@ function patientClick() {
   
   // To redirect to the next page
   document.getElementById("signUpBtn").onclick = function () {
-    location.href = "#"; 
+    location.href = "Login.php"; 
   }
   
   
