@@ -4,33 +4,26 @@ confirmBtn.addEventListener("click", function (event) {
     var form = document.querySelector('.needs-validation');
 
     var statusArray = [];
-    statusArray.push(checkVaccineManufacturer());
+    statusArray.push(checkVaccineName());
     statusArray.push(checkCentreNameBatchNo());
-    statusArray.push(checkCentreAddress());
-    statusArray.push(checkAppointmentDate());
-
+    statusArray.push(checkHealthcareCentre());
+   
     if (statusArray.includes(false)) {
       event.preventDefault();
       event.stopPropagation();
     }
 }, false);
 
-
-var testCheckbox = document.getElementById("vaccineNameManufacturer");  
-if (!testCheckbox.checked) {
-  alert("You have not check!");
+// Check if Vaccine name is selected
+function checkVaccineName(){
+  var vaccineName = document.getElementById("vaccineName");
+  if(vaccineName.value != ""){
+    addIsValid(vaccineName);
+    return true;
+  }
+  addIsInvalid(vaccineName);
+  return false;
 }
-else {
-  alert("Success Message!!");
-}  
-
-var testCheckbox = document.getElementById("centreNameAddress");  
-if (!testCheckbox.checked) {
-  alert("You have not check!");
-}
-else {
-  alert("Success Message!!");
-} 
 
 // Check if healthcareCentre is selected
 function checkCentreNameBatchNo(){
@@ -42,6 +35,17 @@ function checkCentreNameBatchNo(){
     addIsInvalid(centreNameBatchNo);
     return false;
   }
+
+// Check if healthcareCentre is selected
+function checkHealthcareCentre(){
+  var healthcareCentre = document.getElementById("healthcareCentre");
+  if(healthcareCentre.value != ""){
+    addIsValid(healthcareCentre);
+    return true;
+  }
+  addIsInvalid(healthcareCentre);
+  return false;
+}
   
   // Add valid class & removes any invalid class
   function addIsValid(element){

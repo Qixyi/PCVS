@@ -22,64 +22,54 @@
   </div>  
 
   <div class="container">
+
+     <!--Page Heading-->
+     <h3 class="text-center mb-3 mt-5">Request Vaccination Appointment</h3>
+     <br>
       
-
+<!--Request Form-->
        <!-- Vaccine Name and Manufacturer List -->
-       <div class="row mb-3 mt-5">
-       <label for="vaccineNameManufacturer" id="vaccineNameManufacturer" class="pt-2 col-lg-3">Vaccine Name and Manufacturer: </label>
-       <div class="col-lg-9 ">
-       <ul class="list-group">
-        <li class="list-group-item  list-group-item-info">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          Pfizer; Comirnaty
-        </li>
-        <li class="list-group-item  list-group-item-info">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          Sinovac; Sinovac Biotech
-        </li>
-        <li class="list-group-item  list-group-item-info">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          AstraZeneca; AstraZeneca
-        </li>
-        </ul>
-       </div>
-       <div class="invalid-feedback">
-        Please select a vaccine.
-      </div>
-       </div>
 
- <!-- Centre Name and Address List -->
-    <div class="row mb-3 mt-5">
-        <label for="healthcareCentre" id="centreNameAddress" class="pt-2 col-lg-3">Healthcare Centre: </label>
-        <div class="col-lg-9">
-            <ul class="list-group">
-             <li class="list-group-item  list-group-item-info">
-               <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-               <b>Sunway Medical Centre</b> ; <br>
-               Address: 5, Jalan Lagoon Selatan,<br>
-               Bandar Sunway, 47500 Petaling Jaya,<br>
-               Selangor
-             </li>
-             <li class="list-group-item  list-group-item-info">
-               <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-               <b>Mahkota Medical Centre</b> ; <br>
-               3 Mahkota Melaka Jalan Merdeka ,<br>
-               Melaka 75000, Malaysia.
-             </li>
-             <li class="list-group-item  list-group-item-info">
-               <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-               <b>KPJ Johor Specialist Hospital</b> ; <br>
-               Address: 39B, Jalan Abdul Samad, <br>
-               Kolam Ayer, 80100 Johor Bahru.
-             </li>
-             </ul>
+      
+      <form class="row needs-validation" novalidate>
+        <div class="col-md-8 offset-md-2 mt-3">
+          
+            <div class="row mb-3 mt-5">
+              <label for="vaccineName" class="pt-2 col-lg-3">Vaccine Name: </label>
+              <div class="col-lg-9">
+                  <select class="form-select" id="vaccineName" required>
+                      <option selected disabled value="">Choose...</option>
+                      <option value="1">Pfizer; Company Comirnaty</option>
+                      <option value="2">AstraZeneca; Company AstraZeneca</option>
+                      <option value="3">Sinovac; Company Sinovac Biotech</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a vaccine.
+                  </div>
             </div>
-            <div class="invalid-feedback">
-             Please select a healthcare centre.
-           </div>
-            </div>
+        </div>
 
- <!-- Centre Name and Batch No -->
+        <!-- Centre Name and Address List -->
+        <div class="row mb-3 mt-5">
+          <label for="healthcareCentre" class="pt-2 col-lg-3">Healthcare Centre: </label>
+          <div class="col-lg-9">
+              <select class="form-select" id="healthcareCentre" required>
+                  <option selected disabled value="">Choose...</option>
+                  <option value="1">Sunway Medical Centre; Address: 5, Jalan Lagoon Selatan,
+                    Bandar Sunway, 47500 Petaling Jaya,
+                    Selangor</option>
+                  <option value="2">Mahkota Medical Centre; 3 Mahkota Melaka Jalan Merdeka ,
+                    Melaka 75000, Malaysia.</option>
+                  <option value="3">KPJ Johor Specialist;  39B, Jalan Abdul Samad,
+                    Kolam Ayer, 80100 Johor Bahru. </option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a healthcare centre.
+              </div>
+        </div>
+   </div>
+ 
+   <!-- Centre Name and Batch No -->
  <div class="row mb-3 mt-5">
     <label for="centreNameBatchNo" class="pt-2 col-lg-3">Healthcare Centre: </label>
     <div class="col-lg-9 ">
@@ -96,21 +86,10 @@
 </div>
 
   <!--Buttons-->
-  <div class="text-center">
+  <div class="text-center mt-5">
     <button type="submit" class="btn btn-primary" id="confirmBtn">Confirm</button>
     <button type="cancel" class="btn" id="cancelBtn">Cancel</button>
 </div> 
-
-
-
-
-
-
-
   </div>
-
-
-
-
 </body>
 </html>
