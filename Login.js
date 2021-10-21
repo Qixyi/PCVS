@@ -34,7 +34,6 @@ loginBtn.addEventListener("click", function (event) {
   var statusArray = [];
   statusArray.push(checkUserName());
   statusArray.push(checkPassword());
-  alert(statusArray);
  
   if (statusArray.includes(false)) {
     event.preventDefault();
