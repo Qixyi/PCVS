@@ -3,11 +3,11 @@ function checkUserName() {
   var userName = document.getElementById("userName");
   var userNameValue = userName.value.trim();
 
-  if(!userNameValue === ''){
+  if(userNameValue != ''){
     addIsValid(userName);
-    return true
+    return true;
   }else{
-    addIsInvalid(userName)
+    addIsInvalid(userName);
     return false;
   }
 }
@@ -18,8 +18,8 @@ function checkPassword() {
   var passwordValue = password.value.trim();
   var regex =  /^[A-Za-z]\w{7,14}$/;
 
-  if(regex.test(password)){
-    addIsValid(passwordValue);
+  if(regex.test(passwordValue)){
+    addIsValid(password);
     return true;
   }else{
     addIsInvalid(password);
@@ -30,11 +30,11 @@ function checkPassword() {
 // Sign Up button events
 var loginBtn = document.getElementById("loginBtn");
 loginBtn.addEventListener("click", function (event) {
-  var form = document.querySelector('.needs-validation');
   
   var statusArray = [];
   statusArray.push(checkUserName());
   statusArray.push(checkPassword());
+  alert(statusArray);
  
   if (statusArray.includes(false)) {
     event.preventDefault();
@@ -65,6 +65,6 @@ function addIsInvalid(element){
 }
 
  // To redirect to the next page
-document.getElementById("loginBtn").onclick = function () {
-  location.href = "#"; 
-}
+// document.getElementById("loginBtn").onclick = function () {
+//   location.href = "#"; 
+// }
