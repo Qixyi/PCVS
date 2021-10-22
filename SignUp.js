@@ -57,11 +57,9 @@ function patientClick() {
   var createCentreBtn = document.getElementById("createBtn");
   createCentreBtn.addEventListener("click", function (event) {
    
-    alert("create");
     var statusArray =[];
     statusArray.push(checkCentreName());
     statusArray.push(checkAddress());
-    alert(statusArray);
   
     if (statusArray.includes(false)) {
       event.preventDefault();
