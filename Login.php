@@ -1,52 +1,29 @@
 <?php
+session_start();
 
-    session_start();
+require_once("config.php");
 
-    require_once("config.php");
+$database = new MysqlDataProvider(CONFIG['db']);
 
-    $database = new MysqlDataProvider(CONFIG['db']);
+if(isset($_SESSION['user'])) {
+    redirectToHome();
+}
 
-    if(isset($_SESSION['user'])) {
-        redirectToHome();
+$status = true;
+
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
+
+    $loggedInUser = $database->login($username, $password);
+
+    if($loggedInUser != false){
+        $_SESSION['user'] = serialize($loggedInUser);
+        redirectToHome();           
+    } else {
+        $status = false;
     }
-
-    $status = true;
-
-    // if(isset($_SESSION['user'])) {
-    //     $_SESSION['user'] = serialize($loggedInUser);
-    //     if($_SESSION['user'] instanceof Administrator) {
-    //         header("Location: AdminHome.php");
-    //         exit();
-    //     } else {
-    //         header("Location: PatientProfile.php");
-    //         exit();
-    //     }
-    // }
-    
-    if ($_SERVER['REQUEST_METHOD'] === "POST") {
-        $username = trim($_POST["username"]);
-        $password = trim($_POST["password"]);
-
-        $loggedInUser = $database->login($username, $password);
-
-        // print_r($loggedInUser);
-
-        if($loggedInUser != false){
-            $_SESSION['user'] = serialize($loggedInUser);
-            redirectToHome();
-
-            // if($loggedInUser instanceof Administrator) {
-            //     header("Location: AdminHome.php");
-            //     exit();
-            // } else {
-            //     header("Location: PatientProfile.php");
-            //     exit();
-            // }
-                
-        } else {
-            $status = false;
-        }
-    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +44,7 @@
      <div class="navbar sticky-top top-nav-blue">
         <div class="container-fluid">
             <a class="navbar-brand link-light" href="#"><img src="covidvax.png" alt="This is the CoVax logo" height="50" width="50">
-        <p class="h1 align-middle d-inline-block"> CoVax</p></a>
+        <p class="h1 align-middle d-inline-block"> PCVS</p></a>
             <a href="SignUp.php"><button type="button" class="btn btn-outline-warning">Sign Up</button></a>
         </div>
       </div>
@@ -106,10 +83,6 @@
                                                 echo "Account not found. Please check your details.";
                                                 unset($status);
                                             }
-                                            // if(isset($_GET['x'])){
-                                            //     echo "Account not found. Please check your details.";
-                                            //     unset($_GET['x']);
-                                            // }
                                             ?>
                                     </span>
                                     

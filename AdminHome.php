@@ -27,7 +27,7 @@ $database = new MysqlDataProvider(CONFIG['db']);
     <div class="navbar sticky-top top-nav-blue">
       <div class="container-fluid">
           <a class="navbar-brand link-light" href="AdminHome.php"><img src="covidvax.png" alt="This is the CoVax logo" height="50" width="50">
-      <p class="h1 align-middle d-inline-block"> CoVax</p></a>
+      <p class="h1 align-middle d-inline-block"> PCVS</p></a>
           <a href="Logout.php"><button type="button" class="btn btn-outline-warning">Log Out</button></a>
       </div>
     </div>

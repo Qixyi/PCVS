@@ -68,7 +68,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             height="50"
             width="50"
           />
-          <p class="h1 align-middle d-inline-block">CoVax</p>
+          <p class="h1 align-middle d-inline-block">PCVS</p>
         </a>
         <a href="Logout.php"
           ><button type="button" class="btn btn-outline-warning">
