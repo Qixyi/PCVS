@@ -24,7 +24,7 @@ if(isset($_GET["centreName"]) && isset($_GET["vaccineID"])  && isset($_GET["batc
 if ($_SERVER['REQUEST_METHOD'] === "POST"){
   $appointmentDate = $_POST["appointmentDate"];
   unset ($_POST["appointmentDate"]);
-  $database->getVaccination("", $appointmentDate, "", "pending" , $batchNo, $user->getUsername());
+  $database->insertVaccination("", $appointmentDate, "", "pending" , $batchNo, $user->getUsername());
   redirect("PatientDashboard.php");
   
 }

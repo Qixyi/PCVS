@@ -58,6 +58,8 @@ $database = new MysqlDataProvider(CONFIG['db']);
                     if(empty($apptArray)) {
                         echo '<a href="RequestVaccinationAppointmentVN.php"><button type="button" 
                         class="btn btn-primary btn-lg">Request Vaccination Appointment</button></a>';
+                    } else {
+                        echo "";
                     }
                 ?>
             </div>
