@@ -18,23 +18,19 @@ function patientClick() {
   }
 
   function checkButton(){
-    if(document.getElementById('flexRadioDefaultAdmin').checked){
-      document.getElementById("display").innerHTML   
-      = document.getElementById("flexRadioDefaultAdmin").value
-      = " Healthcare Administrator radio button is checked";     
+    if (!document.getElementById('flexRadioDefaultAdmin').checked &&
+    !document.getElementById('flexRadioDefaultPatient').checked) {
+
+      addIsInvalid(document.getElementById('flexRadioDefaultAdmin'));
+      addIsInvalid(document.getElementById('flexRadioDefaultPatient'));
+      return false;
+    } else {
+      addIsValid(document.getElementById('flexRadioDefaultAdmin'));
+      addIsValid(document.getElementById('flexRadioDefaultPatient'));
+      return true;
     }
-    else if(document.getElementById('flexRadioDefaultPatient').checked) {   
-      document.getElementById("display").innerHTML   
-          = document.getElementById("flexRadioDefaultPatient").value   
-          ="Patient radio button is checked";     
-  }  
-  else {   
-      document.getElementById("error").innerHTML  
-          = "You have not selected any user";   
-  }   
   }
-  
-  
+
   //To remove ICPassport
   function adminClick() { 
     var ICPassportDiv = document.getElementById('ICPassportDiv');
@@ -70,21 +66,21 @@ function patientClick() {
   // Sign Up button events
   var signUpBtn = document.getElementById("signUpBtn");
   signUpBtn.addEventListener("click", function (event) {
-  
     var adminSelected = document.getElementById('flexRadioDefaultAdmin').checked;
-  
     var statusArray = [];
+
+    statusArray.push(checkButton());
     statusArray.push(checkFullName());
     statusArray.push(checkUsername());
     statusArray.push(checkPassword());
     statusArray.push(checkEmail());
+
     if(adminSelected){
       statusArray.push(checkStaffID());
       statusArray.push(checkSelectCentre());
     }else{
       statusArray.push(checkICPassport());
     }
-   
     if (statusArray.includes(false)) {
       event.preventDefault();
       event.stopPropagation();
@@ -239,6 +235,7 @@ function patientClick() {
       element.classList.remove("is-valid");
     }
   }
+
   
   // To redirect to the next page
   // document.getElementById("signUpBtn").onclick = function () {

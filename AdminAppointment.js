@@ -12,14 +12,36 @@ acceptRejectBtn.addEventListener("click", function(event){
     
 });
 
-var administeredBtn = document.getElementById("administeredVaccinationSaveBtn");
+function showConfirmModal(button){
+    var vaccinationID = button.id;
 
-administeredBtn.addEventListener("click", function(event) {
-    var administeredCheckbox = document.getElementById("administeredCheckbox").checked;
+    $.ajax({
+        url:"confirm.php",
+        method: "GET",
+        data: {"vaccinationID": vaccinationID},
+        success: function(response) {
+            // Parse JSON string to Javascript object
+            var vax = JSON.parse(response);
+            // Displaying text in proper fields
+            $("#confirmedModalFullName").text()
+        }
 
-    if(!administeredCheckbox) { 
-        alert("No changes made!");
-        event.preventDefault();
-        event.stopPropagation();
-    }
+
+    })
+}
+
+const allConfirmedBtn = document.getElementsByName("statusConfirmed");
+
+allConfirmedBtn.forEach(btn => {
+    btn.addEventListener("click", () => {
+        window.location.href = "AdministerAppt.php?vaccinationID=" + btn.value;
+    })
+})
+
+const allPendingBtn = document.getElementsByName("statusPending");
+
+allPendingBtn.forEach(btn => {
+    btn.addEventListener("click", () => {
+        window.location.href = "ConfirmVaccinationAppointment.php?vaccinationID=" + btn.value;
+    })
 })

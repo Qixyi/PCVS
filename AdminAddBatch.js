@@ -15,30 +15,9 @@ confirmBtn.addEventListener("click", function (event) {
 }, false);
 
 
-var selectedVaccine = document.getElementById("vaccineID");
-
-selectedVaccine.addEventListener("change", function() {
-  var selectedVaccineStr = selectedVaccine.options[selectedVaccine.selectedIndex].value;
-  var vaccineName = document.getElementById("vaccineName");
-  var manufacturer = document.getElementById("manufacturer");
-
-  if(selectedVaccineStr === "1") {
-    vaccineName.value = "Pfizer";
-    manufacturer.value = "Pfizer Inc.";
-  } else if(selectedVaccineStr === "2") {
-    vaccineName.value = "AstraZeneca";
-    manufacturer.value = "AstraZeneca PLC";
-  } else if(selectedVaccineStr === "3") {
-    vaccineName.value = "Sinovac";
-    manufacturer.value = "Sinovac Biotech Ltd.";
-  }
-})
-
-
-
 // Check if vaccine name is selected
 function checkSelectedVaccine(){
-  var selectedVaccine = document.getElementById("vaccineID");
+  var selectedVaccine = document.getElementById("vaccineName");
   if(selectedVaccine.value != ""){
     addIsValid(selectedVaccine);
     return true;
