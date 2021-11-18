@@ -50,8 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST"){
   <!-- Top Bar -->
   <div class="navbar sticky-top top-nav-blue">
     <div class="container-fluid">
-        <a class="navbar-brand link-light" href="PatientDashboard.php"><img src="covidvax.png" alt="This is the CoVax logo" height="50" width="50">
-    <p class="h1 align-middle d-inline-block"> CoVax</p></a>
+        <a class="navbar-brand link-light" href="PatientDashboard.php"><img src="covidvax.png" alt="This is the PCVS logo" height="50" 
+        width="50">
+    <p class="h1 align-middle d-inline-block"> PCVS</p></a>
         <a href="Logout.php"><button type="button" class="btn btn-outline-warning">Log Out</button></a>
     </div>
     </div>  
@@ -76,7 +77,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST"){
       <div class= "row mb-3">
          <label for="appointmentDate" class="pt-2 col-md-3">Appointment Date: </label>
         <div class="col-md-9">
-            <input type="date" class="form-control" id="appointmentDate" name="appointmentDate"  placeholder="Appointment Date" required>
+            <input type="date" class="form-control" id="appointmentDate" name="appointmentDate"  placeholder="Appointment Date" 
+            required>
               <div class="invalid-feedback">
                 Please enter your appointment date (the earliest date is tomorrow).
               </div>

@@ -71,15 +71,16 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
       <!-- Top Bar -->
    <div class="navbar sticky-top top-nav-blue">
     <div class="container-fluid">
-        <a class="navbar-brand link-light" href="RecordVaccine.html"><img src="covidvax.png" alt="This is the CoVax logo" height="50" width="50">
-    <p class="h1 align-middle d-inline-block"> CoVax</p></a>
+        <a class="navbar-brand link-light" href="RecordVaccine.html"><img src="covidvax.png" alt="This is the PCVS logo" height="50"
+         width="50">
+    <p class="h1 align-middle d-inline-block"> PCVS</p></a>
         <a href="Login.php"><button type="button" class="btn btn-outline-warning">Login</button></a>
     </div>
 </div>  
 
 <div class="container">
     
-<h3 class="text-center mt-3">Welcome to CoVax!</h3>
+<h3 class="text-center mt-3">Welcome to PCVS!</h3>
 <form method="POST" class="text-center needs-validation" novalidate>
 
 <?php
@@ -163,7 +164,7 @@ if(isset($status)){
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email"
                     required>
                 <div class="invalid-feedback">Please enter your email in this format
-                    coVax@gmail.com </div>
+                    pcvs@gmail.com </div>
             </div>
             <div class="form-floating-mb-3 invisible" id="staffIDDiv">
                 <label for="staffID">Staff ID</label>
