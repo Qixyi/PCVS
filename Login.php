@@ -43,8 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
      <!-- Top Bar -->
      <div class="navbar sticky-top top-nav-blue">
         <div class="container-fluid">
-            <a class="navbar-brand link-light" href="#"><img src="covidvax.png" alt="This is the CoVax logo" height="50" width="50">
-        <p class="h1 align-middle d-inline-block"> PCVS</p></a>
+            <a class="navbar-brand link-light" href="#">
+                <img src="covidvax.png" alt="This is the CoVax logo" height="50" width="50">
+                <p class="h1 align-middle d-inline-block"> PCVS</p>
+            </a>
             <a href="SignUp.php"><button type="button" class="btn btn-outline-warning">Sign Up</button></a>
         </div>
       </div>

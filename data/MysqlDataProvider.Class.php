@@ -166,7 +166,7 @@ class MysqlDataProvider {
     }
 
 
-    // Returns a Vaccine object with a specific vaccineID.
+    // Returns a Vaccine object with a specific ID.
     // USED in AdminHome.php, AdministerAppt.php
     function getVaccineById($vaccineID) {
         return $this->queryAnObject($vaccineID, "vaccineID", "Vaccine");
@@ -270,7 +270,7 @@ class MysqlDataProvider {
         return $data;
     }
 
-    // Returns an object (if exists) with a particular ID, column, and tablename, else returns false
+    // Returns an object (if exists) with a particular ID from a column and tablename, else returns false
     private function queryAnObject($id, $column, $tableName) {
         $db = $this->connect();
 
