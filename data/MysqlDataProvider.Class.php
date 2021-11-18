@@ -8,7 +8,7 @@ class MysqlDataProvider {
     }
 
     function getVaccinationByUsername($username){
-        return $this->queryAnObject($username, "Vaccination");
+        return $this->queryAnObject($username, "username","Vaccination");
     }
 
     function insertVaccination($vaccinationID, $appointmentDate, $remarks, $status, $batchNo, $username){
@@ -58,7 +58,7 @@ class MysqlDataProvider {
 
     
     function getCentreByName($centreName) {
-        return $this->queryAnObject($centreName, "HealthcareCentre");
+        return $this->queryAnObject($centreName, "centreName", "HealthcareCentre");
     }
 
     function getBatchesByVaccineCentre($vaccineID, $centreName){
@@ -110,7 +110,7 @@ class MysqlDataProvider {
     }
 
     function getBatchesByVaccineID($vaccineID){
-        return $this->queryObjectsById($vaccineID, "Batch");
+        return $this->queryObjectsById($vaccineID, "vaccineID", "Batch");
     }
 
 
@@ -166,10 +166,10 @@ class MysqlDataProvider {
     }
 
 
-    // Returns a Vaccine object with a specific ID.
+    // Returns a Vaccine object with a specific vaccineID.
     // USED in AdminHome.php, AdministerAppt.php
     function getVaccineById($vaccineID) {
-        return $this->queryAnObject($vaccineID, "Vaccine");
+        return $this->queryAnObject($vaccineID, "vaccineID", "Vaccine");
     }
 
 
@@ -194,35 +194,35 @@ class MysqlDataProvider {
     // Returns a batch object with the specific batchNo
     // USED in AdminAddBatch.php, AdminAppointment.php, AdministerAppt.php, ConfirmVaccinationAppointment.php
     function getBatchByNo($batchNo) {
-        return $this->queryAnObject($batchNo, "Batch");
+        return $this->queryAnObject($batchNo, "batchNo", "Batch");
     }
 
 
     // Returns an array of batches based on a centreName.
     // USED in AdminHome.php
     function getBatches($centreName) {
-        return $this->queryObjectsById($centreName, "Batch");
+        return $this->queryObjectsById($centreName, "centreName", "Batch");
     }
 
 
     // Returns an array of vaccinations based on a batchNo.
     // USED in AdminHome.php, AdminAppointment.php
     function getVaccinations($batchNo) {
-        return $this->queryObjectsById($batchNo, "Vaccination");
+        return $this->queryObjectsById($batchNo, "batchNo", "Vaccination");
     }
 
 
     // Returns a vaccination object based on vaccinationID.
     // USED in AdministerAppt.php, ConfirmVaccinationAppointment.php
     function getVaccinationById($vaccinationID) {
-        return $this->queryAnObject($vaccinationID, "Vaccination");
+        return $this->queryAnObject($vaccinationID, "vaccinationID", "Vaccination");
     }
 
 
     // Returns a patient object based on username.
     // USED in AdministerAppt.php, ConfirmVaccinationAppointment.php
     function getPatientByUsername($username) {
-        return $this->queryAnObject($username, "Patient");
+        return $this->queryAnObject($username, "username", "Patient");
     }
 
 
@@ -270,20 +270,20 @@ class MysqlDataProvider {
         return $data;
     }
 
-    // Returns an object (if exists) with a particular ID and tablename, else returns false
-    private function queryAnObject($id, $tableName) {
+    // Returns an object (if exists) with a particular ID, column, and tablename, else returns false
+    private function queryAnObject($id, $column, $tableName) {
         $db = $this->connect();
 
         if($db == null) {
             return;
         }
 
-        $sql = ("SELECT * FROM $tableName WHERE $id = :$id");
+        $sql = ("SELECT * FROM $tableName WHERE $column = :$column");
         
         $smt = $db->prepare($sql);
 
         $smt->execute([
-            ":$id" => $id
+            ":$column" => $id
         ]);
 
         $data = $smt->fetchObject($tableName);
@@ -294,20 +294,20 @@ class MysqlDataProvider {
         return $data;
     }
 
-    // Returns a list of objects with a specific ID and tablename
-    private function queryObjectsById($id, $tableName) {
+    // Returns a list of objects with a specific ID, column, and tablename
+    private function queryObjectsById($id, $column, $tableName) {
         $db = $this->connect();
 
         if($db == null) {
             return [];
         }
 
-        $sql = ("SELECT * FROM $tableName WHERE $id = :$id");
+        $sql = ("SELECT * FROM $tableName WHERE $column = :$column");
 
         $query = $db->prepare($sql);
 
         $query->execute([
-            ":$id" => $id
+            ":$column" => $id
         ]);
 
         $data = $query->fetchAll(PDO::FETCH_CLASS, $tableName);

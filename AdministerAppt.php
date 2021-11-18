@@ -171,6 +171,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
               type="submit"
               class="btn btn-primary"
               id="administeredVaccinationSaveBtn"
+
+              <?php
+              if($batchObj->getQuantityAvailable() == 0) {
+                echo "disabled";
+              }
+              ?>
             >
               Set Administered
             </button>
