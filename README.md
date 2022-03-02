@@ -15,6 +15,7 @@ Private Covid-19 Vaccination System (PCVS) is a web application that allows priv
 - Xampp
 
 **User manual**
+
 To run this web application, you would need Xampp, Zip extractor, and a web browser (preferably Google Chrome).
 1. Run Xampp, start Apache and MySQL service.
 2. Navigate to Xampp's "htdocs" folder and create a new folder called "pcvs".
