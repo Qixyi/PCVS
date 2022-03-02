@@ -8,7 +8,7 @@ Private Covid-19 Vaccination System (PCVS) is a web application that allows priv
 **Technologies applied**
 - HTML5
 - CSS
-- Bootstrap v?
+- Bootstrap v5.0.2
 - Javascript
 - MySQL database
 - PHP
